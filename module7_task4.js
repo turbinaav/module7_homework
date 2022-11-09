@@ -14,6 +14,10 @@ ElectricalAppliance.prototype.off = function () {
     this.isOn = false;
 }
 
+ElectricalAppliance.prototype.appliancePower = function () {
+    console.log(`${this.type}'s power = ${this.power} watt`);
+}
+
 function Kettle(type, brand, material, power) {
     this.type = type,
         this.brand = brand,
@@ -38,7 +42,9 @@ const kettle = new Kettle('kettle', 'Bosch', 'glass', 2000);
 const dishwasher = new Dishwasher('dishwasher', 'Bork', 60, 4500);
 
 kettle.on();
+kettle.appliancePower();
 dishwasher.off();
+dishwasher.appliancePower();
 
 console.log(kettle);
 console.log(dishwasher);
